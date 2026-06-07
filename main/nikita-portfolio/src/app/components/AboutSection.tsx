@@ -162,12 +162,14 @@ export function AboutSection() {
                 />          
               </motion.div>
               <motion.div
-                style={{
+                 style={{
                   position: "absolute",
-                  bottom: -16,
-                  right: -16,
+                  bottom: 25,
+                  left: "50%",
+                  transform: "translateX(-50%)",
                   backgroundColor: "#6B0F1A",
-                  padding: "6px 12px",
+                  padding: "10px 20px",
+                  zIndex: 10,
                 }}
                 whileHover={{ scale: 1.1 }}
               >

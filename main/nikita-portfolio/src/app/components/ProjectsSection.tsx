@@ -4,47 +4,51 @@ import { ArrowUpRight } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 const projects = [
+
   {
-    title: "SpamSniper",
+    title: "BuzzFilter",
     category: "Machine Learning",
     description:
-      "An SMS spam classifier built with Python and Scikit-learn, deployed on Streamlit Community Cloud. Achieves high accuracy using NLP feature extraction.",
+      "An SMS Spam Detection system built using Python, NLP, and Machine Learning. The model classifies messages as spam or legitimate using text preprocessing, feature extraction, and supervised learning techniques. Deployed on Streamlit for real-time predictions.",
     image:
       "https://images.unsplash.com/photo-1737505599159-5ffc1dcbc08f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    tags: ["Python", "Scikit-learn", "Streamlit", "NLP"],
+    tags: ["Python", "Scikit-learn", "NLP", "Streamlit"],
     featured: true,
     link: "#",
   },
+
   {
-    title: "MediScan AI",
+    title: "BodyPose Analyzer",
     category: "Computer Vision",
     description:
-      "An open-source Flask-based medical scan analysis app leveraging AI to assist in medical image interpretation with real-time API integration.",
+      "A computer vision application that analyzes human body posture using AI-powered pose detection. Built with Python and machine learning techniques to identify body landmarks and generate posture insights from images and video streams.",
     image:
-      "https://images.unsplash.com/photo-1761740533449-b8d4385e60b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    tags: ["Flask", "Computer Vision", "REST API", "React"],
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    tags: ["Python", "Computer Vision", "Pose Detection", "Machine Learning"],
     featured: false,
     link: "#",
   },
+
   {
     title: "Virtual Science Lab",
-    category: "Full Stack",
+    category: "Full Stack Development",
     description:
-      "A React/Vite + FastAPI full-stack application with gamification features, MongoDB Atlas integration, and real-time science simulations.",
+      "A collaborative virtual laboratory platform built using React, Vite, FastAPI, and MongoDB Atlas. Features science experiment simulations, gamification, user authentication, leaderboard systems, and cloud deployment support.",
     image:
-      "https://images.unsplash.com/photo-1770210217380-d78a69acdc77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "https://images.unsplash.com/photo-1532094349884-543bc11b234d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     tags: ["React", "FastAPI", "MongoDB", "Vercel"],
     featured: false,
     link: "#",
   },
+
   {
-    title: "EK-vichaar",
-    category: "News Portal",
+    title: "DealFlowAI",
+    category: "AI Chatbot",
     description:
-      "A bilingual Next.js news portal for Hindi, Marathi, and English readers, with live API integration, YouTube embeds, and multi-language support.",
+      "An intelligent AI-powered chatbot designed to assist users with startup discovery, investment insights, and business-related queries. Built using modern AI technologies to provide conversational recommendations, automated responses, and personalized assistance.",
     image:
-      "https://images.unsplash.com/photo-1647684073836-90038ed669b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    tags: ["Next.js", "TypeScript", "REST API", "i18n"],
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    tags: ["AI", "Chatbot", "LLM", "Python"],
     featured: false,
     link: "#",
   },

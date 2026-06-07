@@ -113,7 +113,7 @@ export function IntroScreen({ onComplete }: { onComplete: () => void }) {
                 opacity: 0.6,
               }}
             >
-              Portfolio 2026
+            Portfolio 2026
             </span>
           </motion.div>
         </div>

@@ -22,13 +22,13 @@ const experience = [
     ],
   },
   {
-    role: "Full Stack Developer",
-    company: "Virtual Science Lab",
-    period: "2025 - 2026",
+    role: "AI & Machine Learning Intern",
+    company: "Infosys Springboard",
+    period: "2025",
     achievements: [
-      "Built React/Vite + FastAPI app with gamification system",
-      "Migrated SQLite to MongoDB Atlas for Vercel deployment compatibility",
-      "Resolved CORS, import errors, and merge conflicts across feature branches",
+      "Completed industry-oriented training in Artificial Intelligence and Machine Learning",
+      "Worked on hands-on projects involving Python, Machine Learning, and Data Analysis",
+      "Gained practical experience in model development, data preprocessing, and problem-solving",
     ],
   },
 ];
