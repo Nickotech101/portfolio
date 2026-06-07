@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-
+import creativeIntelligence from "../../assets/creative_intelligence.png";
 export function AboutSection() {
   return (
     <section
@@ -132,7 +132,7 @@ export function AboutSection() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
-              style={{ position: "relative", width: 192, height: 192 }}
+              style={{ position: "relative", width: 300, height: 300 }}
             >
               <motion.div
                 style={{ width: "100%", height: "100%", position: "relative", overflow: "hidden" }}
@@ -149,10 +149,17 @@ export function AboutSection() {
                   }}
                 />
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1678845530864-18a666ca9762?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600"
-                  alt="Data visualization"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", mixBlendMode: "multiply" }}
-                />
+                    src={creativeIntelligence}
+                    alt="Creative Intelligence"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                      backgroundColor: "#F6EEE8",
+                      objectPosition: "center",
+                      mixBlendMode: "multiply",
+                    }}
+                />          
               </motion.div>
               <motion.div
                 style={{
