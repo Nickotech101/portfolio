@@ -1,6 +1,5 @@
 # Nikita Mishra — Portfolio
 
-A production-ready React portfolio built from a Figma design.
 
 ## Stack
 

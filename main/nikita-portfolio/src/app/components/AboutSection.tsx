@@ -144,7 +144,7 @@ export function AboutSection() {
                     position: "absolute",
                     inset: 0,
                     background: "linear-gradient(135deg, #6B0F1A, #4A0013)",
-                    opacity: 0.3,
+                    opacity: 0.1,
                     zIndex: 1,
                   }}
                 />
@@ -154,12 +154,10 @@ export function AboutSection() {
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "contain",
-                      backgroundColor: "#F6EEE8",
+                      objectFit: "cover",
                       objectPosition: "center",
-                      mixBlendMode: "multiply",
                     }}
-                />          
+                />
               </motion.div>
               <motion.div
                  style={{
@@ -204,8 +202,7 @@ export function AboutSection() {
                   color: "#6B0F1A",
                 }}
               >
-                I'm a passionate AI/ML student and Python developer dedicated to building
-                intelligent systems that push the boundaries of what's possible.
+                I'm a passionate AI/ML student and Python developer pursuing B.Tech CSE (AI & ML Specialization) at Lokmanya Tilak College of Engineering, Navi Mumbai — graduating in 2028.
               </p>
               <p
                 style={{
@@ -220,6 +217,19 @@ export function AboutSection() {
                 exploring neural networks, machine learning algorithms, and innovative applications
                 of artificial intelligence. I believe in creating technology that's not just
                 functional, but elegant and transformative.
+              </p>
+              <p
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: 15,
+                  lineHeight: 1.8,
+                  color: "#6B0F1A",
+                  opacity: 0.75,
+                  borderLeft: "2px solid rgba(107,15,26,0.3)",
+                  paddingLeft: 16,
+                }}
+              >
+                🏆 Runner-Up — Model Business Summit (MBS), held at Lokmanya Tilak College of Engineering, Navi Mumbai · AgriTech Track
               </p>
             </div>
 

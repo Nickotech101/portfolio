@@ -2,6 +2,10 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import buzzFilterImg from "../../assets/BuzzFilter.png";
+import bodyPoseImg from "../../assets/Bodypose_Analyzer.png";
+import virtualScienceImg from "../../assets/VirtualScience_lab.png";
+import dealFlowImg from "../../assets/DealFlowAI.png";
 
 const projects = [
 
@@ -10,8 +14,7 @@ const projects = [
     category: "Machine Learning",
     description:
       "An SMS Spam Detection system built using Python, NLP, and Machine Learning. The model classifies messages as spam or legitimate using text preprocessing, feature extraction, and supervised learning techniques. Deployed on Streamlit for real-time predictions.",
-    image:
-      "https://images.unsplash.com/photo-1737505599159-5ffc1dcbc08f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: buzzFilterImg,
     tags: ["Python", "Scikit-learn", "NLP", "Streamlit"],
     featured: true,
     link: "#",
@@ -22,8 +25,7 @@ const projects = [
     category: "Computer Vision",
     description:
       "A computer vision application that analyzes human body posture using AI-powered pose detection. Built with Python and machine learning techniques to identify body landmarks and generate posture insights from images and video streams.",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: bodyPoseImg,
     tags: ["Python", "Computer Vision", "Pose Detection", "Machine Learning"],
     featured: false,
     link: "#",
@@ -33,12 +35,11 @@ const projects = [
     title: "Virtual Science Lab",
     category: "Full Stack Development",
     description:
-      "A collaborative virtual laboratory platform built using React, Vite, FastAPI, and MongoDB Atlas. Features science experiment simulations, gamification, user authentication, leaderboard systems, and cloud deployment support.",
-    image:
-      "https://images.unsplash.com/photo-1532094349884-543bc11b234d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "A collaborative virtual laboratory platform built using React, Vite, FastAPI, and MongoDB Atlas. Features science experiment simulations, gamification, user authentication, leaderboard systems, and cloud deployment support. I served as Project Admin for this project at NSoC.",
+    image: virtualScienceImg,
     tags: ["React", "FastAPI", "MongoDB", "Vercel"],
     featured: false,
-    link: "#",
+    link: "https://github.com/nikita09-lab/Virtual_Science_lab",
   },
 
   {
@@ -46,8 +47,7 @@ const projects = [
     category: "AI Chatbot",
     description:
       "An intelligent AI-powered chatbot designed to assist users with startup discovery, investment insights, and business-related queries. Built using modern AI technologies to provide conversational recommendations, automated responses, and personalized assistance.",
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: dealFlowImg,
     tags: ["AI", "Chatbot", "LLM", "Python"],
     featured: false,
     link: "#",

@@ -66,7 +66,7 @@ export function Footer() {
             </p>
 
             <motion.a
-              href="mailto:nikita@example.com"
+              href="mailto:nikitamishra090906@gmail.com"
               whileHover={{ x: 4 }}
               style={{
                 display: "inline-flex",
@@ -122,8 +122,8 @@ export function Footer() {
               <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                 {[
                   { icon: Github, label: "GitHub", href: "https://github.com/nikita09-lab" },
-                  { icon: Linkedin, label: "LinkedIn", href: "#" },
-                  { icon: Mail, label: "Email", href: "mailto:nikita@example.com" },
+                  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/nikita-mishra-6985812b6/" },
+                  { icon: Mail, label: "Email", href: "mailto:nikitamishra090906@gmail.com" },
                 ].map(({ icon: Icon, label, href }) => (
                   <motion.a
                     key={label}

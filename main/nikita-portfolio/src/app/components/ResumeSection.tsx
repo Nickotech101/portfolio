@@ -1,25 +1,33 @@
 import { motion } from "motion/react";
-import { Download, GraduationCap, Briefcase, Award } from "lucide-react";
+import { Download, GraduationCap, Briefcase, Award, ExternalLink, FileText, Github } from "lucide-react";
+import infosysCert from "../../assets/Infosys_Springboard.pdf";
+import csrboxCert from "../../assets/CSRBOX.pdf";
+import dataAnalyticsCert from "../../assets/Data_Analytics_Job .pdf";
+import microsoftCopilotCert from "../../assets/CertificateOfCompletion_Learning Microsoft 365 Copilot for Work.pdf";
+import microsoftCert from "../../assets/microsoft.pdf";
+import resumePDF from "../../assets/resume.pdf";
 
 const education = [
   {
-    degree: "Bachelor of Technology",
-    institution: "University Name",
-    year: "2022 - 2026",
-    focus: "Computer Science & Engineering",
+    degree: "Bachelor of Technology — CSE (AI & ML Specialization)",
+    institution: "Lokmanya Tilak College of Engineering, Navi Mumbai",
+    year: "2024 – 2028",
+    focus: "Computer Science & Engineering with AI/ML Specialization",
   },
 ];
 
 const experience = [
   {
-    role: "Open Source Contributor — NSoC'26",
-    company: "MediScan AI",
-    period: "2026 - Present",
+    role: "Open Source Project Admin — NSoC",
+    company: "Virtual Science Lab",
+    period: "2025",
     achievements: [
-      "Contributed documentation and fixed missing API routes causing frontend JSON parse errors",
-      "Improved Flask backend stability and frontend React integration",
-      "Collaborated with open-source community on AI-powered medical scan analysis",
+      "Served as Project Admin for Virtual Science Lab at NSoC (NSUT's Open Source Cohort)",
+      "Mentored contributors building science experiment simulations with React, FastAPI, and MongoDB Atlas",
+      "Reviewed pull requests, managed GitHub issues, and guided the community roadmap",
     ],
+    certLink: null,
+    githubLink: "https://github.com/nikita09-lab/Virtual_Science_lab",
   },
   {
     role: "AI & Machine Learning Intern",
@@ -30,14 +38,51 @@ const experience = [
       "Worked on hands-on projects involving Python, Machine Learning, and Data Analysis",
       "Gained practical experience in model development, data preprocessing, and problem-solving",
     ],
+    certLink: infosysCert,
+    githubLink: null,
+  },
+  {
+    role: "Social Impact Intern",
+    company: "CSRBOX",
+    period: "2024",
+    achievements: [
+      "Contributed to CSR initiatives and social impact projects through structured internship",
+      "Developed communication and project management skills in a professional environment",
+    ],
+    certLink: csrboxCert,
+    githubLink: null,
   },
 ];
 
 const certifications = [
-  "Deep Learning Specialization - DeepLearning.AI",
-  "TensorFlow Developer Certificate",
-  "Machine Learning Engineering",
-  "Advanced Python Programming",
+  {
+    name: "Deloitte Australia — Data Analytics Job Simulation",
+    issuer: "Forage",
+    date: "Issued Nov 2025",
+    credentialId: "8rZAfnkbFkLKwYYuD",
+    link: dataAnalyticsCert,
+  },
+  {
+    name: "Career Essentials in Generative AI",
+    issuer: "Microsoft & LinkedIn",
+    date: "Issued May 2026",
+    credentialId: null,
+    link: microsoftCert,
+  },
+  {
+    name: "Ethics in the Age of Generative AI",
+    issuer: "LinkedIn",
+    date: "Issued May 2026",
+    credentialId: null,
+    link: null,
+  },
+  {
+    name: "Learning Microsoft 365 Copilot for Work",
+    issuer: "LinkedIn",
+    date: "Issued May 2026",
+    credentialId: null,
+    link: microsoftCopilotCert,
+  },
 ];
 
 export function ResumeSection() {
@@ -101,7 +146,8 @@ export function ResumeSection() {
           </h2>
 
           <motion.a
-            href="#"
+            href={resumePDF}
+            download="Nikita_Mishra_Resume.pdf"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -211,6 +257,7 @@ export function ResumeSection() {
                       color: "#6B0F1A",
                       fontFamily: "Inter, sans-serif",
                       fontSize: 13,
+                      height: "fit-content",
                     }}
                   >
                     {edu.year}
@@ -291,13 +338,14 @@ export function ResumeSection() {
                       color: "#6B0F1A",
                       fontFamily: "Inter, sans-serif",
                       fontSize: 13,
+                      height: "fit-content",
                     }}
                   >
                     {exp.period}
                   </span>
                 </div>
 
-                <ul style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                <ul style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 20 }}>
                   {exp.achievements.map((achievement, i) => (
                     <li
                       key={i}
@@ -316,6 +364,58 @@ export function ResumeSection() {
                     </li>
                   ))}
                 </ul>
+
+                {/* Action buttons */}
+                <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 8 }}>
+                  {exp.certLink && (
+                    <motion.a
+                      href={exp.certLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 8,
+                        padding: "8px 16px",
+                        border: "1px solid rgba(107,15,26,0.4)",
+                        color: "#4A0013",
+                        textDecoration: "none",
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: 12,
+                        letterSpacing: "0.08em",
+                      }}
+                      whileHover={{ backgroundColor: "#4A0013", color: "#F6EEE8" }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <FileText size={14} />
+                      View Certificate
+                    </motion.a>
+                  )}
+                  {exp.githubLink && (
+                    <motion.a
+                      href={exp.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 8,
+                        padding: "8px 16px",
+                        border: "1px solid rgba(107,15,26,0.4)",
+                        color: "#4A0013",
+                        textDecoration: "none",
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: 12,
+                        letterSpacing: "0.08em",
+                      }}
+                      whileHover={{ backgroundColor: "#4A0013", color: "#F6EEE8" }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Github size={14} />
+                      View on GitHub
+                    </motion.a>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>
@@ -362,9 +462,47 @@ export function ResumeSection() {
                   padding: 24,
                   border: "1px solid rgba(107,15,26,0.2)",
                   backgroundColor: "#ffffff",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 8,
                 }}
               >
-                <p style={{ fontFamily: "Inter, sans-serif", color: "#4A0013" }}>{cert}</p>
+                <p style={{ fontFamily: "Inter, sans-serif", color: "#4A0013", fontWeight: 500, fontSize: 15 }}>
+                  {cert.name}
+                </p>
+                <p style={{ fontFamily: "Inter, sans-serif", color: "#6B0F1A", fontSize: 13 }}>
+                  {cert.issuer}
+                </p>
+                <p style={{ fontFamily: "Inter, sans-serif", color: "#A26769", fontSize: 12, fontStyle: "italic" }}>
+                  {cert.date}
+                </p>
+                {cert.credentialId && (
+                  <p style={{ fontFamily: "Inter, sans-serif", color: "#A26769", fontSize: 11, letterSpacing: "0.05em" }}>
+                    ID: {cert.credentialId}
+                  </p>
+                )}
+                {cert.link && (
+                  <motion.a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 6,
+                      marginTop: 8,
+                      color: "#6B0F1A",
+                      textDecoration: "none",
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: 12,
+                      letterSpacing: "0.08em",
+                    }}
+                    whileHover={{ color: "#4A0013" }}
+                  >
+                    <ExternalLink size={12} />
+                    View Certificate
+                  </motion.a>
+                )}
               </motion.div>
             ))}
           </div>

@@ -243,8 +243,6 @@ export function HeroSection() {
             transition={{ duration: 1, delay: 3.5, ease: [0.22, 1, 0.36, 1] }}
             style={{
               position: "relative",
-              x: mousePosition.x * -0.3,
-              y: mousePosition.y * -0.3,
             }}
           >
             <motion.div
@@ -287,7 +285,7 @@ export function HeroSection() {
                 style={{
                   position: "absolute",
                   top: 32,
-                  left: -48,
+                  left: 16,
                   backgroundColor: "#F6EEE8",
                   padding: "8px 16px",
                   boxShadow: "0 8px 32px rgba(74,0,19,0.12)",
@@ -315,7 +313,7 @@ export function HeroSection() {
                 style={{
                   position: "absolute",
                   bottom: 32,
-                  right: -48,
+                  right: 16,
                   backgroundColor: "#6B0F1A",
                   padding: "8px 16px",
                   zIndex: 10,
