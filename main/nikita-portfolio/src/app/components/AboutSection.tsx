@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import creativeIntelligence from "../../assets/creative_intelligence.png";
+
 export function AboutSection() {
   return (
     <section
@@ -24,6 +25,7 @@ export function AboutSection() {
           opacity: 0.1,
           borderRadius: "50%",
           filter: "blur(48px)",
+          pointerEvents: "none",
         }}
         animate={{ scale: [1, 1.2, 1], x: [0, 50, 0] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
@@ -62,6 +64,7 @@ export function AboutSection() {
           backgroundColor: "#6B0F1A",
           opacity: 0.1,
           transformOrigin: "top",
+          pointerEvents: "none",
         }}
         initial={{ scaleY: 0 }}
         whileInView={{ scaleY: 1 }}
@@ -84,7 +87,7 @@ export function AboutSection() {
           }}
           className="about-grid"
         >
-          {/* Left */}
+          {/* ── LEFT COLUMN ── */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -92,6 +95,7 @@ export function AboutSection() {
             viewport={{ once: true }}
             style={{ display: "flex", flexDirection: "column", gap: 32 }}
           >
+            {/* Section label + heading */}
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <span
                 style={{
@@ -117,70 +121,86 @@ export function AboutSection() {
               </h2>
             </div>
 
-            {/* Animated line */}
+            {/* Animated underline */}
             <motion.div
-              style={{ height: 1, background: "linear-gradient(to right, #6B0F1A, transparent)", transformOrigin: "left" }}
+              style={{
+                height: 1,
+                background: "linear-gradient(to right, #6B0F1A, transparent)",
+                transformOrigin: "left",
+              }}
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             />
 
-            {/* Image card */}
+            {/* ── Image card — fixed height, no dancing button ── */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
-              style={{ position: "relative", width: 300, height: 300 }}
+              style={{ position: "relative", width: 300, height: 320 }}
             >
-              <motion.div
-                style={{ width: "100%", height: "100%", position: "relative", overflow: "hidden" }}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.4 }}
+              {/* image fills the card */}
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  position: "relative",
+                  overflow: "hidden",
+                }}
               >
+                {/* subtle overlay */}
                 <div
                   style={{
                     position: "absolute",
                     inset: 0,
-                    background: "linear-gradient(135deg, #6B0F1A, #4A0013)",
-                    opacity: 0.1,
+                    background: "linear-gradient(135deg, rgba(107,15,26,0.08), rgba(74,0,19,0.04))",
                     zIndex: 1,
+                    pointerEvents: "none",
                   }}
                 />
                 <ImageWithFallback
-                    src={creativeIntelligence}
-                    alt="Creative Intelligence"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      objectPosition: "center",
-                    }}
+                  src={creativeIntelligence}
+                  alt="Creative Intelligence"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center",
+                    display: "block",
+                  }}
                 />
-              </motion.div>
-              <motion.div
-                 style={{
+              </div>
+
+              {/* "Innovation" badge — absolutely pinned at bottom-left, never moves */}
+              <div
+                style={{
                   position: "absolute",
-                  bottom: 25,
-                  left: "50%",
-                  transform: "translateX(-50%)",
+                  bottom: 0,
+                  left: 0,
                   backgroundColor: "#6B0F1A",
                   padding: "10px 20px",
                   zIndex: 10,
                 }}
-                whileHover={{ scale: 1.1 }}
               >
                 <span
-                  style={{ fontFamily: "Inter, sans-serif", fontSize: 12, color: "#F6EEE8" }}
+                  style={{
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: 12,
+                    letterSpacing: "0.15em",
+                    textTransform: "uppercase",
+                    color: "#F6EEE8",
+                  }}
                 >
                   Innovation
                 </span>
-              </motion.div>
+              </div>
             </motion.div>
           </motion.div>
 
-          {/* Right */}
+          {/* ── RIGHT COLUMN ── */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -190,10 +210,11 @@ export function AboutSection() {
               paddingTop: "clamp(0px, 8vw, 128px)",
               display: "flex",
               flexDirection: "column",
-              gap: 48,
+              gap: 40,
             }}
           >
-            <div style={{ display: "flex", flexDirection: "column", gap: 24, maxWidth: 576 }}>
+            {/* Bio */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 20, maxWidth: 576 }}>
               <p
                 style={{
                   fontFamily: "Cormorant Garamond, serif",
@@ -202,7 +223,9 @@ export function AboutSection() {
                   color: "#6B0F1A",
                 }}
               >
-                I'm a passionate AI/ML student and Python developer pursuing B.Tech CSE (AI & ML Specialization) at Lokmanya Tilak College of Engineering, Navi Mumbai — graduating in 2028.
+                I'm a passionate AI/ML student and Python developer pursuing B.Tech CSE
+                (AI &amp; ML Specialization) at Lokmanya Tilak College of Engineering,
+                Navi Mumbai — graduating in 2028.
               </p>
               <p
                 style={{
@@ -214,27 +237,14 @@ export function AboutSection() {
                 }}
               >
                 My journey combines deep technical expertise with creative problem-solving,
-                exploring neural networks, machine learning algorithms, and innovative applications
-                of artificial intelligence. I believe in creating technology that's not just
-                functional, but elegant and transformative.
-              </p>
-              <p
-                style={{
-                  fontFamily: "Inter, sans-serif",
-                  fontSize: 15,
-                  lineHeight: 1.8,
-                  color: "#6B0F1A",
-                  opacity: 0.75,
-                  borderLeft: "2px solid rgba(107,15,26,0.3)",
-                  paddingLeft: 16,
-                }}
-              >
-                🏆 Runner-Up — Model Business Summit (MBS), held at Lokmanya Tilak College of Engineering, Navi Mumbai · AgriTech Track
+                exploring neural networks, machine learning algorithms, and innovative
+                applications of artificial intelligence. I believe in creating technology
+                that's not just functional, but elegant and transformative.
               </p>
             </div>
 
             {/* Skill tags */}
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 16, paddingTop: 32 }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
               {["Machine Learning", "Deep Learning", "Python", "Neural Networks", "Data Science"].map(
                 (skill, i) => (
                   <motion.div
@@ -249,6 +259,7 @@ export function AboutSection() {
                       border: "1px solid rgba(107,15,26,0.2)",
                       cursor: "default",
                       transition: "all 0.3s",
+                      color: "#6B0F1A",
                     }}
                   >
                     <span
@@ -267,14 +278,22 @@ export function AboutSection() {
             </div>
 
             {/* Stats */}
-            <div style={{ paddingTop: 64, display: "flex", alignItems: "center", gap: 32 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 32, paddingTop: 16 }}>
               {[
                 { value: "5+", label: "Projects" },
                 { value: "100%", label: "Dedication" },
+                { value: "5+", label: "Hackathons" }
               ].map(({ value, label }, i) => (
                 <div key={label} style={{ display: "flex", alignItems: "center", gap: 32 }}>
                   {i > 0 && (
-                    <div style={{ height: 64, width: 1, backgroundColor: "#6B0F1A", opacity: 0.2 }} />
+                    <div
+                      style={{
+                        height: 64,
+                        width: 1,
+                        backgroundColor: "#6B0F1A",
+                        opacity: 0.2,
+                      }}
+                    />
                   )}
                   <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                     <div

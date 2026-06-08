@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import heroImg from "../../assets/herosection.png";
 
 export function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -243,6 +244,8 @@ export function HeroSection() {
             transition={{ duration: 1, delay: 3.5, ease: [0.22, 1, 0.36, 1] }}
             style={{
               position: "relative",
+              x: mousePosition.x * -0.3,
+              y: mousePosition.y * -0.3,
             }}
           >
             <motion.div
@@ -252,8 +255,8 @@ export function HeroSection() {
                 style={{
                   position: "absolute",
                   inset: 0,
-                  background: "linear-gradient(135deg, #4A0013, #6B0F1A, #A26769)",
-                  opacity: 0.2,
+                  background: "linear-gradient(to top, rgba(74,0,19,0.3) 0%, transparent 60%)",
+                  opacity: 1,
                   zIndex: 1,
                 }}
               />
@@ -264,15 +267,14 @@ export function HeroSection() {
                 transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
               >
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1647684073836-90038ed669b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-                  alt="Abstract geometric pattern"
+                  src={heroImg}
+                  alt="Nikita Mishra"
                   className=""
                   style={{
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                    mixBlendMode: "multiply",
-                    opacity: 0.6,
+                    objectPosition: "center top",
                   }}
                 />
               </motion.div>
@@ -284,7 +286,7 @@ export function HeroSection() {
                 transition={{ duration: 0.8, delay: 4 }}
                 style={{
                   position: "absolute",
-                  top: 32,
+                  top: 24,
                   left: 16,
                   backgroundColor: "#F6EEE8",
                   padding: "8px 16px",
@@ -313,7 +315,7 @@ export function HeroSection() {
                 style={{
                   position: "absolute",
                   bottom: 32,
-                  right: 16,
+                  right: -48,
                   backgroundColor: "#6B0F1A",
                   padding: "8px 16px",
                   zIndex: 10,

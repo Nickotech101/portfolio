@@ -8,7 +8,6 @@ import virtualScienceImg from "../../assets/VirtualScience_lab.png";
 import dealFlowImg from "../../assets/DealFlowAI.png";
 
 const projects = [
-
   {
     title: "BuzzFilter",
     category: "Machine Learning",
@@ -17,9 +16,8 @@ const projects = [
     image: buzzFilterImg,
     tags: ["Python", "Scikit-learn", "NLP", "Streamlit"],
     featured: true,
-    link: "#",
+    link: "https://github.com/nikita09-lab/BuzzFilter",
   },
-
   {
     title: "BodyPose Analyzer",
     category: "Computer Vision",
@@ -28,9 +26,8 @@ const projects = [
     image: bodyPoseImg,
     tags: ["Python", "Computer Vision", "Pose Detection", "Machine Learning"],
     featured: false,
-    link: "#",
+    link: "https://github.com/nikita09-lab/BodyPose_Analyzer",
   },
-
   {
     title: "Virtual Science Lab",
     category: "Full Stack Development",
@@ -41,7 +38,6 @@ const projects = [
     featured: false,
     link: "https://github.com/nikita09-lab/Virtual_Science_lab",
   },
-
   {
     title: "DealFlowAI",
     category: "AI Chatbot",
@@ -50,7 +46,7 @@ const projects = [
     image: dealFlowImg,
     tags: ["AI", "Chatbot", "LLM", "Python"],
     featured: false,
-    link: "#",
+    link: "https://github.com/nikita09-lab/DEALFLOW-AI",
   },
 ];
 
@@ -79,6 +75,7 @@ export function ProjectsSection() {
           position: "absolute",
           inset: 0,
           opacity: 0.05,
+          pointerEvents: "none",
           backgroundImage: `url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjRjZFRUU4Ij48L3JlY3Q+PHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRjZFRUU4IiBzdHJva2Utd2lkdGg9IjAuNSIvPjwvc3ZnPg==")`,
         }}
       />
@@ -92,8 +89,6 @@ export function ProjectsSection() {
           borderRadius: "50%",
           pointerEvents: "none",
           background: "radial-gradient(circle, rgba(216,180,160,0.15) 0%, transparent 70%)",
-          left: mousePosition.x - 192,
-          top: mousePosition.y - 192,
         }}
         animate={{ left: mousePosition.x - 192, top: mousePosition.y - 192 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
@@ -133,7 +128,7 @@ export function ProjectsSection() {
           </h2>
         </motion.div>
 
-        {/* Projects */}
+        {/* Projects list */}
         <div style={{ display: "flex", flexDirection: "column", gap: "clamp(80px, 12vw, 192px)" }}>
           {projects.map((project, index) => (
             <motion.article
@@ -151,14 +146,14 @@ export function ProjectsSection() {
               }}
               className="project-article"
             >
-              {/* Image */}
-              <div style={{ position: "relative", direction: "ltr" }} className="group">
+              {/* ── Image — NO background color; image fills 100% ── */}
+              <div style={{ position: "relative", direction: "ltr" }}>
                 <div
                   style={{
                     position: "relative",
                     aspectRatio: "16/10",
                     overflow: "hidden",
-                    backgroundColor: "#6B0F1A",
+                    /* no backgroundColor here so nothing shows behind image */
                   }}
                 >
                   <motion.div
@@ -169,9 +164,26 @@ export function ProjectsSection() {
                     <ImageWithFallback
                       src={project.image}
                       alt={project.title}
-                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        objectPosition: "center",
+                        display: "block",
+                      }}
                     />
                   </motion.div>
+
+                  {/* Subtle gradient overlay so text tags pop */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background:
+                        "linear-gradient(to top, rgba(74,0,19,0.35) 0%, transparent 60%)",
+                      pointerEvents: "none",
+                    }}
+                  />
 
                   {project.featured && (
                     <div
@@ -181,6 +193,7 @@ export function ProjectsSection() {
                         left: 24,
                         backgroundColor: "#F6EEE8",
                         padding: "8px 16px",
+                        zIndex: 2,
                       }}
                     >
                       <span
@@ -255,6 +268,8 @@ export function ProjectsSection() {
 
                 <motion.a
                   href={project.link}
+                  target={project.link !== "#" ? "_blank" : undefined}
+                  rel="noopener noreferrer"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
@@ -262,7 +277,6 @@ export function ProjectsSection() {
                     paddingTop: 24,
                     color: "#F6EEE8",
                     textDecoration: "none",
-                    transition: "color 0.3s",
                   }}
                   whileHover={{ color: "#D8B4A0" }}
                 >
@@ -288,9 +302,9 @@ export function ProjectsSection() {
 
       <style>{`
         @media (max-width: 768px) {
-          .project-article { 
-            grid-template-columns: 1fr !important; 
-            direction: ltr !important; 
+          .project-article {
+            grid-template-columns: 1fr !important;
+            direction: ltr !important;
           }
         }
       `}</style>
