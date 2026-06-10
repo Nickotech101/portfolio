@@ -5,12 +5,12 @@ const skillCategories = [
   {
     category: "Machine Learning",
     icon: Brain,
-    skills: ["TensorFlow", "PyTorch", "Scikit-learn", "Keras", "Neural Networks"],
+    skills: ["TensorFlow", "PyTorch", "Scikit-learn", "Keras", "Open CV"],
   },
   {
     category: "Programming",
     icon: Code2,
-    skills: ["Python", "JavaScript", "TypeScript", "C++", "SQL"],
+    skills: ["Python", "JavaScript", "TypeScript", "C", "SQL"],
   },
   {
     category: "Data Science",
@@ -20,7 +20,7 @@ const skillCategories = [
   {
     category: "Tools & Frameworks",
     icon: Layers,
-    skills: ["Git", "Docker", "Jupyter", "React", "FastAPI"],
+    skills: ["Git", "Docker", "Jupyter", "React","Next.js", "FastAPI"],
   },
   {
     category: "AI Technologies",
